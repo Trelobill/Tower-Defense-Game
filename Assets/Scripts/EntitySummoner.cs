@@ -7,7 +7,18 @@ public class EntitySummoner : MonoBehaviour
     public static Dictionary<int, GameObject> EnemyPrefabs;
     public static Dictionary<int, Queue<Enemy>> EnemyObjectPools;
 
+    [SerializeField]
+    private Transform spawnPointInstance; // Assign in Inspector
+
+    public static Transform spawnPoint; // Static reference for static methods
+
     private static bool IsInitialized;
+
+    void Awake()
+    {
+        spawnPoint = spawnPointInstance;
+    }
+
     public static void Init()
     {
         if (!IsInitialized)
@@ -52,7 +63,7 @@ public class EntitySummoner : MonoBehaviour
             }
             else
             {
-                GameObject enemyPrefab = Instantiate(EnemyPrefabs[EnemyID], Vector3.zero, Quaternion.identity);
+                GameObject enemyPrefab = Instantiate(EnemyPrefabs[EnemyID], spawnPoint.position, Quaternion.identity);
                 SummonedEnemy = enemyPrefab.GetComponent<Enemy>();
                 SummonedEnemy.Init();
                 Debug.Log("Instantiated new enemy with ID: " + EnemyID);
@@ -79,5 +90,4 @@ public class EntitySummoner : MonoBehaviour
         EnemyToRemove.gameObject.SetActive(false);
         EnemiesInGame.Remove(EnemyToRemove);
     }
-
 }
