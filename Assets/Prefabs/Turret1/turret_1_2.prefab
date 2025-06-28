@@ -701,9 +701,11 @@ GameObject:
   m_Component:
   - component: {fileID: 680263624431698553}
   - component: {fileID: -7789356316328233682}
-  m_Layer: 0
+  - component: {fileID: 9185334468565711010}
+  - component: {fileID: 5235536889717996801}
+  m_Layer: 7
   m_Name: turret_1_2
-  m_TagString: Untagged
+  m_TagString: PlaceNotAllowed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -740,6 +742,40 @@ MonoBehaviour:
   turretMount: {fileID: 2713833887125892832}
   turnSpeed: 5
   detectionRange: 30
+  yRotationOffset: 0
+--- !u!114 &9185334468565711010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8870592839556487193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65bf0553e09b646488d50516a6d5fdbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &5235536889717996801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8870592839556487193}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.611264, y: 7.0159245, z: 7.196962}
+  m_Center: {x: 0.03436724, y: 3.5380926, z: 1.0834415}
 --- !u!1 &9014082271611759061
 GameObject:
   m_ObjectHideFlags: 0
